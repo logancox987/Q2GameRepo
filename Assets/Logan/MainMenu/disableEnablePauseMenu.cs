@@ -52,6 +52,7 @@ public class disableEnablePauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuCanvas.SetActive(false);
+        cooldownTimer = menuCooldown;
     }
 
 
