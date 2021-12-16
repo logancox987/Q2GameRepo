@@ -151,6 +151,7 @@ public class Enemy_Behaviour : MonoBehaviour
 
     IEnumerator waitToFlip()
     {
+        anim.SetBool("canWalk", false);
         anim.Play("Enemy_idle");
         
         wait = false;

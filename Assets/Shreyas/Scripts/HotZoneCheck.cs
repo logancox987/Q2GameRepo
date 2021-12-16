@@ -41,6 +41,7 @@ public class HotZoneCheck : MonoBehaviour
             enemyParent.inRange = false;
             enemyParent.SelectTarget();
             enemyParent.moveSpeed = 3.5f;
+            anim.SetBool("canWalk", false);
         }
     }
 }
