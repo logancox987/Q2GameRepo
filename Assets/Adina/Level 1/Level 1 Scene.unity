@@ -2697,7 +2697,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 0}
+  - name: PlayerWalking
+    clip: {fileID: 8300000, guid: ec3f01abfa0668447b2734ad2ad5c472, type: 3}
+    volume: 0
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: PintoBeanWalking
+    clip: {fileID: 8300000, guid: 76183219e2cbf34438b291f6d1c333a8, type: 3}
+    volume: 0
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
 --- !u!4 &979631602
 Transform:
   m_ObjectHideFlags: 0
