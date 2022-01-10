@@ -120,4 +120,5 @@ public class playerMoveScript : MonoBehaviour
         Gizmos.DrawWireCube(transform.position + new Vector3(.02f, -.865f, 0f), boxSize);
     }
 
+
 }
