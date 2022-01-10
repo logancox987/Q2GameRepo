@@ -2678,7 +2678,7 @@ GameObject:
   - component: {fileID: 979631602}
   - component: {fileID: 979631601}
   m_Layer: 0
-  m_Name: AutoManager
+  m_Name: AudioMananger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3198,7 +3198,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 130
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -3236,7 +3236,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.264
+      value: 0.25
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3266,7 +3266,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1.1
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -9448,7 +9448,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 130
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -9486,7 +9486,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.25
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -9516,7 +9516,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1.1
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0

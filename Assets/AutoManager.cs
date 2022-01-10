@@ -32,7 +32,7 @@ public class AutoManager : MonoBehaviour{
 
     }
 
-    public void Play (string name)
+    public void Play2 (string name)
     {
         Sound s = Array.Find(sounds, Sound => Sound.name == name);
         if(s == null)
@@ -43,4 +43,8 @@ public class AutoManager : MonoBehaviour{
         s.source.Play();
 
     }
+}
+
+public class AudioManager
+{
 }
