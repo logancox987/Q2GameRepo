@@ -19,9 +19,9 @@ TagManager:
   - ground
   - player
   - playerIgnoreCollision
-  - 
-  - 
-  - 
+  - enemy
+  - enemiesToDamage
+  - attackPOS
   - 
   - 
   - 

@@ -4,14 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Adina/Level 1/Level 1 Scene.unity
-    guid: 18c2859d19384c0419697308189f166c
-  - enabled: 1
-    path: Assets/Logan/Menus/MainMenu/MainMenu.unity
-    guid: 66ae059b22615d04fba91dbddda22c19
-  - enabled: 1
-    path: Assets/Adina/Credits/CreditScene.unity
-    guid: 515b77666bdd0534b9584cd8e337d930
+  m_Scenes: []
   m_configObjects: {}

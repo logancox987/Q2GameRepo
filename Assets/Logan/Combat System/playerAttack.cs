@@ -118,7 +118,7 @@ public class playerAttack : MonoBehaviour
         if (slamAttackStarting == true && slamAttackNumber == 1)
         {
             playerAnimator.SetBool("slamAnim", true);
-            Invoke("disableSlamAnim", 1);
+            Invoke("disableSlamAnim", .2f);
         }
 
         if(slamAttackNumber == 0)

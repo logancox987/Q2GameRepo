@@ -652,6 +652,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -665,10 +666,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 8e4dfe4f-2c65-47f1-85b1-b55eae9750ae
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Q2BeanProject
+  organizationId: unity_1710091
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
