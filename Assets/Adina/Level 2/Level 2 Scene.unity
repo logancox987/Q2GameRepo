@@ -919,6 +919,7 @@ GameObject:
   - component: {fileID: 1304259453}
   - component: {fileID: 1304259452}
   - component: {fileID: 1304259451}
+  - component: {fileID: 1304259454}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -991,6 +992,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1304259454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304259450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9caeedd036e385340bee57032543ec22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1651901574}
 --- !u!1 &1357868465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +1141,7 @@ PrefabInstance:
     - target: {fileID: 8060357416850212195, guid: 732a1e112d6586047aabc1c4040be59c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.93
+      value: -2.59
       objectReference: {fileID: 0}
     - target: {fileID: 8060357416850212195, guid: 732a1e112d6586047aabc1c4040be59c,
         type: 3}
@@ -1198,7 +1212,6 @@ GameObject:
   - component: {fileID: 1380694948}
   - component: {fileID: 1380694950}
   - component: {fileID: 1380694949}
-  - component: {fileID: 1380694951}
   - component: {fileID: 1380694954}
   - component: {fileID: 1380694953}
   - component: {fileID: 1380694952}
@@ -6473,32 +6486,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!61 &1380694951
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380694947}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 76.5, y: -2.25}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 193.5, y: 25.5}
-  m_EdgeRadius: 0
 --- !u!66 &1380694952
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -6516,9 +6503,35 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1380694954}
+    m_ColliderPaths:
+    - - X: 1627343744
+        Y: 52656248
+      - X: 1627343744
+        Y: -44843752
+      - X: -67343752
+        Y: -44843752
+      - X: -67343752
+        Y: 52656248
+      - X: -82656248
+        Y: 52656248
+      - X: -82656248
+        Y: -60156248
+      - X: 1642656256
+        Y: -60156248
+      - X: 1642656256
+        Y: 52656248
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 164.2656, y: -6.015625}
+      - {x: 164.2656, y: 5.265625}
+      - {x: 162.73438, y: 5.2655954}
+      - {x: 162.73434, y: -4.4843755}
+      - {x: -6.7343755, y: -4.4843454}
+      - {x: -6.734405, y: 5.265625}
+      - {x: -8.265625, y: 5.2655954}
+      - {x: -8.265595, y: -6.015625}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1380694953
@@ -6536,12 +6549,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!19719996 &1380694954
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -6553,8 +6566,8 @@ TilemapCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
@@ -6844,7 +6857,7 @@ PrefabInstance:
     - target: {fileID: 8060357416850212195, guid: 732a1e112d6586047aabc1c4040be59c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.76
+      value: -2.02
       objectReference: {fileID: 0}
     - target: {fileID: 8060357416850212195, guid: 732a1e112d6586047aabc1c4040be59c,
         type: 3}
@@ -6978,7 +6991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
+  - name: Death Sounds_Don
     clip: {fileID: 0}
     voulume: 0
     pitch: 0
