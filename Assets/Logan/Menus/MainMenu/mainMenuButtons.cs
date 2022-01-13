@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class mainMenuButtons : MonoBehaviour
 {
@@ -19,6 +20,21 @@ public class mainMenuButtons : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void playGame()
+    {
+        SceneManager.LoadScene("Level 1 Scene");
+    }
+
+    public void creditScene()
+    {
+        SceneManager.LoadScene("CreditScene");
+    }
+
+    public void backToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
 }
