@@ -14,6 +14,7 @@ public class playerAttack : MonoBehaviour
     public Rigidbody2D rb2;
     public bool canAttackAfterSlam;
 
+
     public int slamAttackNumber = 1;
 
     public float camShakeAmt = 0.1f;
@@ -24,8 +25,10 @@ public class playerAttack : MonoBehaviour
     public LayerMask whatIsEnemies;
 
     public Transform slamAttackPos;
+
     public float attackRangeX;
     public float attackRangeY;
+
 
     public Animator playerAnimator;
 
@@ -42,7 +45,7 @@ public class playerAttack : MonoBehaviour
     void Update()
     {
 
-        if(slamAttackStarting == true)
+        if (slamAttackStarting == true)
         {
             playerCurrentSlamCD = playerSlamAttackCD;
         }
@@ -53,10 +56,17 @@ public class playerAttack : MonoBehaviour
 
         IsGrounded = player.GetComponent<playerMoveScript>().IsGrounded();
 
+        //normal attack
         if (playerCurrentCD <= 0)
         {
             if (Input.GetMouseButtonDown(0) && IsGrounded == true && canAttackAfterSlam == true)
             {
+
+                player.GetComponent<playerMoveScript>().enabled = false;
+                rb2.velocity = new Vector2(rb2.velocity.x * 0, rb2.velocity.y);
+                player.GetComponent<playerMoveScript>().playerAnimator.SetBool("moving", false);
+                Invoke("EnableMove", .3f);
+
                 playerCurrentCD = playerAttackCD;
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                 for (int i = 0; i < enemiesToDamage.Length; i++)
@@ -71,6 +81,7 @@ public class playerAttack : MonoBehaviour
             playerCurrentCD -= Time.deltaTime;
         }
 
+        //slam attack
         if(playerCurrentSlamCD <= 0)
         {
             if(Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.S) && IsGrounded == false)
@@ -127,6 +138,11 @@ public class playerAttack : MonoBehaviour
         }
 
 
+    }
+
+    public void EnableMove()
+    {
+        player.GetComponent<playerMoveScript>().enabled = true;
     }
 
     public void disableSlamAnim()

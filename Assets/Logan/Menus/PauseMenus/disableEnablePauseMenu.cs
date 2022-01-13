@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class disableEnablePauseMenu : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject hideOnPause;
     public GameObject pauseMenuCanvas;
     public float menuCooldown;
     public float cooldownTimer;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        hideOnPause = GameObject.FindGameObjectWithTag("hideOnPause");
         pauseMenuCanvas = GameObject.FindGameObjectWithTag("PauseMenuCanvas");
         pauseMenuCanvas.SetActive(false);
         cooldownTimer = menuCooldown;
@@ -27,6 +27,7 @@ public class disableEnablePauseMenu : MonoBehaviour
         {
             if(pauseMenuCanvas.activeInHierarchy == false)
             {
+                
                 pauseMenuCanvas.SetActive(true);
             }
             else
@@ -39,12 +40,16 @@ public class disableEnablePauseMenu : MonoBehaviour
         if(pauseMenuCanvas.activeInHierarchy == true)
         {
             Time.timeScale = 0f;
-            player.GetComponent<SpriteRenderer>().enabled = false;
+                if(hideOnPause !=null)
+                {
+                    hideOnPause.SetActive(false);
+                }
+
         }
         else
         {
             Time.timeScale = 1f;
-            player.GetComponent<SpriteRenderer>().enabled = true;
+            hideOnPause.SetActive(true);
         }
 
     }
