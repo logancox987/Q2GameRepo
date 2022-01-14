@@ -7651,19 +7651,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1651901573}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1651901575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651901574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74098f0923961e742b9987fc8cb67743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds: []
 --- !u!82 &1651901576
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8523,8 +8510,6 @@ MonoBehaviour:
   sounds:
   - name: Death Sounds_Don
     clip: {fileID: 0}
-    voulume: 0
-    pitch: 0
     volume: 0
     soundPitch: 0.1
 --- !u!4 &2112615959
