@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class oauseMenuButtonActions : MonoBehaviour
+public class pauseMenuButtonActions : MonoBehaviour
 {
 
 
@@ -23,4 +24,9 @@ public class oauseMenuButtonActions : MonoBehaviour
         Debug.Log("Quit Game");
         Application.Quit();
     }    
+
+    public void mainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
