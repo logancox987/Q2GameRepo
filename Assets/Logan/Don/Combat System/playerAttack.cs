@@ -84,7 +84,7 @@ public class playerAttack : MonoBehaviour
         //slam attack
         if(playerCurrentSlamCD <= 0)
         {
-            if(Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.S) && IsGrounded == false)
+            if(Input.GetKey(KeyCode.F) && IsGrounded == true)
             {
                 Debug.Log("Slam Attack Start");
                 slamAttackStarting = true;
@@ -93,22 +93,28 @@ public class playerAttack : MonoBehaviour
             }
         }
 
-        if(slamAttackStarting == true && IsGrounded == false)
+        //if(slamAttackStarting == true && IsGrounded == false)
+        //{
+        //    player.GetComponent<playerMoveScript>().enabled = false;
+        //    rb2.velocity = new Vector2(rb2.velocity.x * 0, rb2.velocity.y);
+        //    player.GetComponent<playerMoveScript>().playerAnimator.SetBool("moving", false);
+        //}
+
+        if(slamAttackStarting == true) //&& IsGrounded == true)
         {
+
             player.GetComponent<playerMoveScript>().enabled = false;
             rb2.velocity = new Vector2(rb2.velocity.x * 0, rb2.velocity.y);
             player.GetComponent<playerMoveScript>().playerAnimator.SetBool("moving", false);
-        }
 
-        if(slamAttackStarting == true && IsGrounded == true)
-        {
+            playerAnimator.SetBool("slamAnim", true);
+            Invoke("disableSlamAnim", .5f);
 
-            slamAttackStarting = false;
+            //slamAttackStarting = false;
 
 
             Invoke("enableMoveAfterSlam", 1.5f);
             Invoke("canAttackAfterSlamFunction", 1.5f);
-            Invoke("shakeCam", 0.01f);
 
 
             Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(slamAttackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnemies);
@@ -128,8 +134,8 @@ public class playerAttack : MonoBehaviour
 
         if (slamAttackStarting == true && slamAttackNumber == 1)
         {
-            playerAnimator.SetBool("slamAnim", true);
-            Invoke("disableSlamAnim", .2f);
+            //playerAnimator.SetBool("slamAnim", true);
+            //Invoke("disableSlamAnim", .2f);
         }
 
         if(slamAttackNumber == 0)
