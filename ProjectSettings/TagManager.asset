@@ -7,6 +7,10 @@ TagManager:
   - PauseMenuCanvas
   - platCheck
   - ground
+  - Player Weapon
+  - Enemy
+  - attackCollider
+  - hideOnPause
   layers:
   - Default
   - TransparentFX
@@ -18,11 +22,11 @@ TagManager:
   - 
   - ground
   - player
-  - playerIgnoreCollision
+  - attackCollider
   - enemy
+  - PlayerPassthrough
   - enemiesToDamage
-  - attackPOS
-  - Background
+  - playerIgnoreCollision
   - 
   - 
   - 
@@ -44,12 +48,30 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
+  - name: Background 1
     uniqueID: 1195186419
     locked: 0
-  - name: Player
+  - name: Background 2
+    uniqueID: 3960597883
+    locked: 0
+  - name: Background 3
+    uniqueID: 4056023213
+    locked: 0
+  - name: Background 4
     uniqueID: 1664620035
     locked: 0
-  - name: Enemies
+  - name: Background 5
     uniqueID: 3877603673
+    locked: 0
+  - name: Screen Darkener
+    uniqueID: 105489551
+    locked: 0
+  - name: Ground
+    uniqueID: 2145761305
+    locked: 0
+  - name: Enemy
+    uniqueID: 1850495075
+    locked: 0
+  - name: Player
+    uniqueID: 2615224951
     locked: 0
