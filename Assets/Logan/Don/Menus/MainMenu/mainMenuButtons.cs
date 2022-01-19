@@ -24,7 +24,7 @@ public class mainMenuButtons : MonoBehaviour
 
     public void playGame()
     {
-        SceneManager.LoadScene("Shreyas Scene");
+        SceneManager.LoadScene("Level 1");
     }
 
     public void creditScene()
