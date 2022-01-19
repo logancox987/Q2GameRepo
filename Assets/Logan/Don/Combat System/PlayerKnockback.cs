@@ -11,10 +11,7 @@ public class PlayerKnockback : MonoBehaviour
     Rigidbody2D rb2;
     public GameObject player;
     public GameObject playerAttack;
-    public GameObject BlackBean;
-    public GameObject KidneyBean;
-    public GameObject PintoBean;
-    public GameObject RedBean;
+    public GameObject enemy;
     public float knockbackTime;
 
     public bool IsHurt
@@ -32,11 +29,11 @@ public class PlayerKnockback : MonoBehaviour
     public void DoKnockback()
     {
         StartCoroutine(DisablePlayerMovement(knockbackLength));
-        if (player.transform.position.x > BlackBean.transform.position.x || player.transform.position.x > KidneyBean.transform.position.x || player.transform.position.x > PintoBean.transform.position.x || player.transform.position.x > RedBean.transform.position.x)
+        if (player.transform.position.x > enemy.transform.position.x)
         {
             rb2.velocity = new Vector2(knockbackForce, knockbackForce *0);
         }
-        if (player.transform.position.x < BlackBean.transform.position.x || player.transform.position.x < KidneyBean.transform.position.x || player.transform.position.x < PintoBean.transform.position.x || player.transform.position.x < RedBean.transform.position.x)
+        if (player.transform.position.x < enemy.transform.position.x)
         {
             rb2.velocity = new Vector2(-knockbackForce, knockbackForce*0);
         }

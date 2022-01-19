@@ -69,9 +69,21 @@ TagManager:
   - name: Ground
     uniqueID: 2145761305
     locked: 0
-  - name: Enemy
-    uniqueID: 1850495075
-    locked: 0
   - name: Player
     uniqueID: 2615224951
+    locked: 0
+  - name: BlackBean
+    uniqueID: 4232183685
+    locked: 0
+  - name: Pintobean
+    uniqueID: 575181555
+    locked: 0
+  - name: KidneyBean
+    uniqueID: 417870017
+    locked: 0
+  - name: RJB
+    uniqueID: 3774391431
+    locked: 0
+  - name: BJB
+    uniqueID: 1850495075
     locked: 0

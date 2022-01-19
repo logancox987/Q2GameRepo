@@ -29,16 +29,17 @@ public class Enemy_Behaviour : MonoBehaviour
     #endregion
 
     private float rotation;
-
     private void Awake()
     {
         SelectTarget();
         intTimer = timer; //Store the inital value of timer
         anim = GetComponent<Animator>();
-        if(target=rightBoundary)
+        if (target=leftBoundary)
         {
             Flip();
         }
+
+
     }
 
     void Update()
@@ -149,22 +150,24 @@ public class Enemy_Behaviour : MonoBehaviour
         if (distanceToLeft > distanceToRight)
         {
             target = leftBoundary;
-            
+            StartCoroutine(waitToFlip());
         }
-        else
+        else if(distanceToLeft < distanceToRight)
         {
             target = rightBoundary;
+            StartCoroutine(waitToFlip());
         }
 
-        StartCoroutine(waitToFlip());
+
         
 
     }      
+
     IEnumerator waitToFlip()
     {
         anim.SetBool("canWalk", false);
-        anim.Play("Enemy_idle");
-        
+        anim.Play("BB Idle");
+
         wait = false;
         
         yield return new WaitForSeconds(flipWait);
@@ -176,15 +179,14 @@ public class Enemy_Behaviour : MonoBehaviour
     IEnumerator waitToAttackAgain()
     {
         anim.SetBool("canWalk", false);
-        anim.Play("Enemy_idle");
 
         wait = false;
     
         yield return new WaitForSeconds(attackWait);
+
         Flip();
 
         wait = true;
-        Debug.Log("WAIT aaaaaaaaaaaaaaaaaaa");
     }
 
     public void Flip()

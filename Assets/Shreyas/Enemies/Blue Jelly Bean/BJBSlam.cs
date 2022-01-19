@@ -15,6 +15,7 @@ public class BJBSlam : MonoBehaviour
     private bool attacking;
     private Vector3[] directions = new Vector3[1];
     public float waitTime;
+    public GameObject slamBox;
 
     [Header("Reset")]
     public Vector2 initial = new Vector2(0, 0);
@@ -31,6 +32,7 @@ public class BJBSlam : MonoBehaviour
     private void Start()
     {
         BJBAnimations = GetComponent<Animator>();
+        slamBox.SetActive(false);
     }
     void Update()
     {
@@ -38,6 +40,7 @@ public class BJBSlam : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), end, speed * Time.deltaTime);
             BJBAnimations.Play("BJ Jump");
+            slamBox.SetActive(true);
             if(Vector2.Distance(transform.position, end) < 0.01f)
             {
                 Stop();
@@ -64,6 +67,7 @@ public class BJBSlam : MonoBehaviour
 
             transform.position = Vector2.MoveTowards(new Vector2(transform.position.x, transform.position.y), initial, 10 * Time.deltaTime);
             BJBAnimations.Play("BJ Walk");
+            slamBox.SetActive(false);
             if(Vector2.Distance(transform.position, initial) < 0.01f)
             {
                 reseting = false;
@@ -84,13 +88,13 @@ public class BJBSlam : MonoBehaviour
     {
         destination = transform.position;
         attacking = false;
-
     }
 
     private IEnumerator WaitToReset()
     {
         waitingToReset = true;
         yield return new WaitForSeconds(stopTime);
+        BJBAnimations.Play("BJ Walk");
         reseting = true;
         waitingToReset = false;
 
@@ -106,7 +110,6 @@ public class BJBSlam : MonoBehaviour
 
             if (hit.collider != null && !attacking)
             {
-                BJBAnimations.Play("BJ WaitToSlam");
                 yield return new WaitForSeconds(waitTime);
                 attacking = true;
                 destination = directions[i];
