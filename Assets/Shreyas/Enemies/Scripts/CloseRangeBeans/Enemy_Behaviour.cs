@@ -94,7 +94,7 @@ public class Enemy_Behaviour : MonoBehaviour
             Vector2 targetPosition = new Vector2(target.position.x, transform.position.y);
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
             hitBox.SetActive(false);
-
+            
         }
 
 
@@ -165,17 +165,19 @@ public class Enemy_Behaviour : MonoBehaviour
 
     IEnumerator waitToFlip()
     {
+        
         anim.SetBool("canWalk", false);
         anim.Play("BB Idle");
 
         wait = false;
-        
+
         yield return new WaitForSeconds(flipWait);
-        
+
         Flip();
-       
+
         wait = true;
     }
+
     IEnumerator waitToAttackAgain()
     {
         anim.SetBool("canWalk", false);
